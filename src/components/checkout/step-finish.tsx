@@ -1,13 +1,14 @@
 import { useCheckoutStore } from "@/stores/checkout-store";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { generateMessage } from "@/lib/generate-message";
 
 
 export default function StepFinish() {
 
   const { name } = useCheckoutStore(state => state)
-  const message = 'Oi, tudo bem?'
-  const linkWhatsapp = `https://wa.me//${process.env.NEXT_PUBLIC_WHATSAPP}?text${encodeURI(message)}`
+  const message = generateMessage()
+  const linkWhatsapp = `https://wa.me//${process.env.NEXT_PUBLIC_WHATSAPP}?text=${encodeURI(message)}`
   return (
 
     <div className="text-center flex flex-col gap-5">
