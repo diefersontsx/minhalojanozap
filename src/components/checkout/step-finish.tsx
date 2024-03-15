@@ -6,5 +6,9 @@ type Props = {
 };
 
 export default function StepFinish({ setStep }: Props) {
-  return <div>...</div>;
+  return (
+
+    <div></div>
+
+  )
 }
